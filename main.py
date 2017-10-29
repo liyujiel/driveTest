@@ -31,7 +31,7 @@ def getJsonAvailableContent(browser):
 
 Omonth = month = int(input("month: ")) #datetime.today().month
 Oyear = year = int(input("year: ")) #datetime.today().year
-examType = str(input("G2/G: ")).upper()
+examType = "G2" #str(input("G2/G: ")).upper()
 
 browser = webdriver.Firefox()
 
@@ -47,26 +47,26 @@ sleep(30)
 
 #browser.find_element_by_id("regSubmitBtn").click()
 
-sleep(5)
+sleep(3)
 
 browser.find_element_by_link_text("Book a New Road Test").click()
 
-sleep(5)
+sleep(3)
 btnName = examType+"btn"
 browser.find_element_by_id(btnName).click()
 
-sleep(5)
+sleep(3)
 
 browser.find_element_by_class_name("booking-submit").click()
 
-sleep(5)
+sleep(3)
 browser.find_element_by_xpath("//*[@id='9583']").click()
 
-sleep(5)
+sleep(3)
 
 #browser.find_element_by_link_text("Continue").click()
 browser.find_element_by_class_name("booking-submit").click()
-sleep(5)
+sleep(3)
 
 
 
@@ -97,7 +97,7 @@ while dateLst == []:
         year += 1
     url = jsonUrlTemp.format(month=str(month),year=str(year))
     browser.get(url)
-    sleep(3)
+    sleep(1)
     jsonContent = getJsonAvailableContent(browser)
     dateLst = find_available_date(jsonContent)
 
@@ -112,7 +112,8 @@ while(month != Omonth or year != Oyear):
     if month > 12:
         Omonth = 1
         Oyear += 1
-    browser.find_element_by_class_name("ion-chevron-right").click()  
+    sleep(5)
+    browser.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[4]/div/div[2]/div/div[6]/div/form/div[1]/div/div[1]/a[2]").click()  
     Omonth += 1
     
 browser.find_element_by_xpath(dayXpath).click()    
