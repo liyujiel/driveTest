@@ -22,15 +22,18 @@ def find_available_date(jsonContent):
     return prtLst
 
 def getJsonAvailableContent(browser):
+    sleep(5)
+    browser.find_element_by_id("tab-1").click()
+    sleep(5)
     content = browser.find_element_by_tag_name("pre").text
     jsonContent = json.loads(content)['availableBookingDates']
     return jsonContent
 
-month = datetime.today().month
-year = datetime.today().year
+Omonth = month = int(input("month: ")) #datetime.today().month
+Oyear = year = int(input("year: ")) #datetime.today().year
+examType = str(input("G2/G: ")).upper()
 
-
-browser = webdriver.Chrome()
+browser = webdriver.Firefox()
 
 browser.get("https://drivetest.ca/book-a-road-test/booking.html#/verify-driver")
 handle1 = browser.window_handles
@@ -42,24 +45,30 @@ browser.find_element_by_id("licenceExpiryDate").send_keys("20211228")
 
 sleep(30)
 
-browser.find_element_by_id("regSubmitBtn").click()
+#browser.find_element_by_id("regSubmitBtn").click()
 
 sleep(5)
 
 browser.find_element_by_link_text("Book a New Road Test").click()
 
 sleep(5)
-
-browser.find_element_by_id("G2btn").click()
+btnName = examType+"btn"
+browser.find_element_by_id(btnName).click()
 
 sleep(5)
 
 browser.find_element_by_class_name("booking-submit").click()
 
-# sleep(5)
-# browser.find_element_by_link_text("Oshawa").click()
+sleep(5)
+browser.find_element_by_xpath("//*[@id='9583']").click()
 
 sleep(5)
+
+#browser.find_element_by_link_text("Continue").click()
+browser.find_element_by_class_name("booking-submit").click()
+sleep(5)
+
+
 
 # browser.find_element_by_class_name("booking-submit").click()
 
@@ -73,10 +82,12 @@ handles = browser.window_handles
 browser.switch_to_window(handles[-1])
 
 
-
 jsonContent = getJsonAvailableContent(browser)
 
 dateLst = find_available_date(jsonContent)
+
+
+
 
 while dateLst == []:
     if month < 12:
@@ -92,6 +103,20 @@ while dateLst == []:
 
 print(month)
 print(dateLst)
+day0 = dateLst[0]['day']
+dayXpath = "//*[@title='{day}']".format(day=day0)
+
+
+browser.switch_to_window(handles[0])
+while(month != Omonth or year != Oyear):
+    if month > 12:
+        Omonth = 1
+        Oyear += 1
+    browser.find_element_by_class_name("ion-chevron-right").click()  
+    Omonth += 1
+    
+browser.find_element_by_xpath(dayXpath).click()    
+browser.find_element_by_xpath("//*[@id='calendarSubmit']/button").click()
 
 msg = "month: " + str(month) + " dateLst: " + str(dateLst)
 
@@ -121,4 +146,4 @@ mail.quit()
 # elem = browser.find_element_by_name('p')  # Find the search box
 # elem.send_keys('seleniumhq' + Keys.RETURN)
 
-browser.quit()
+#browser.quit()
