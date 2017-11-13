@@ -12,3 +12,68 @@
 1505613748471	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
 1505613749399	Marionette	INFO	Listening on port 50962
 1505613749592	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510604097459	geckodriver	INFO	geckodriver 0.18.0
+1510604097470	geckodriver	INFO	Listening on 127.0.0.1:51247
+1510604098926	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1510604100116	Marionette	INFO	Listening on port 51254
+1510604100636	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 10964] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Child 1640] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+er C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1510604199667	Marionette	INFO	Listening on port 51343
+1510604200026	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Child 9864] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Child 9864] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+S certificate errors will be ignored for this session
+[Parent 10928] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 10356] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Child 10356] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+el_win.cc, line 345
+[Child 3664] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1510604719256	geckodriver	INFO	geckodriver 0.18.0
+1510604719263	geckodriver	INFO	Listening on 127.0.0.1:51609
+1510604719774	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1510604720919	Marionette	INFO	Listening on port 51613
+1510604721479	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 14624] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+red for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 14772] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Child 14772] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1510605676384	geckodriver	INFO	geckodriver 0.18.0
+1510605676395	geckodriver	INFO	Listening on 127.0.0.1:51872
+1510605676924	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1510605678092	Marionette	INFO	Listening on port 51876
+1510605678569	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+[Child 13668] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+[Child 13668] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+nel_win.cc, line 345
+[Child 12248] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-esr52-w32-000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 345
+1510606523147	geckodriver	INFO	geckodriver 0.18.0
+1510606523156	geckodriver	INFO	Listening on 127.0.0.1:52060
+1510606523646	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1510606524770	Marionette	INFO	Listening on port 52064
+1510606524960	Marionette	WARN	TLS certificate errors will be ignored for this session

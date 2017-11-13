@@ -1,6 +1,7 @@
 import selenium.webdriver as webdriver
 import selenium.webdriver.support.ui as ui
 from selenium.webdriver.common.keys import Keys
+import selenium.common.exceptions as seleniumException
 
 from time import sleep
 from datetime import datetime
@@ -12,8 +13,9 @@ sender = "garretmoon@gmail.com"
 password = "ljg711112"
 reciver = "potalexto@gmail.com"
 SUBJECT = "test email"
-
-
+#L40017900995125
+#20211011
+#12:00 -- 16:00pm
 def find_available_date(jsonContent):
     prtLst = []
     for dayDict in jsonContent:
@@ -22,14 +24,15 @@ def find_available_date(jsonContent):
     return prtLst
 
 def getJsonAvailableContent(browser):
-    sleep(5)
-    browser.find_element_by_id("tab-1").click()
+    # sleep(5)
+    # browser.find_element_by_id("tab-1").click()
     sleep(5)
     content = browser.find_element_by_tag_name("pre").text
     jsonContent = json.loads(content)['availableBookingDates']
     return jsonContent
 
-Omonth = month = int(input("month: ")) #datetime.today().month
+month = int(input("month: ")) 
+Omonth = datetime.today().month
 Oyear = year = int(input("year: ")) #datetime.today().year
 examType = "G2" #str(input("G2/G: ")).upper()
 
@@ -37,15 +40,13 @@ browser = webdriver.Firefox()
 
 browser.get("https://drivetest.ca/book-a-road-test/booking.html#/verify-driver")
 handle1 = browser.window_handles
-# print(handle1)
 
 sleep(1)
-browser.find_element_by_id("licenceNumber").send_keys("H90067890995906")
-browser.find_element_by_id("licenceExpiryDate").send_keys("20211228")
+browser.find_element_by_id("licenceNumber").send_keys("L40017900995125")
+browser.find_element_by_id("licenceExpiryDate").send_keys("20211011")
 
 sleep(30)
-
-#browser.find_element_by_id("regSubmitBtn").click()
+browser.find_element_by_id("regSubmitBtn").click()
 
 sleep(3)
 
@@ -103,9 +104,6 @@ while dateLst == []:
 
 print(month)
 print(dateLst)
-day0 = dateLst[0]['day']
-dayXpath = "//*[@title='{day}']".format(day=day0)
-
 
 browser.switch_to_window(handles[0])
 while(month != Omonth or year != Oyear):
@@ -115,6 +113,12 @@ while(month != Omonth or year != Oyear):
     sleep(5)
     browser.find_element_by_xpath("/html/body/div[1]/div/div[2]/div[4]/div/div[2]/div/div[6]/div/form/div[1]/div/div[1]/a[2]").click()  
     Omonth += 1
+
+
+
+day0 = dateLst[0]['day']
+dayXpath = "//*[@title='{day}']".format(day=day0)
+
     
 browser.find_element_by_xpath(dayXpath).click()    
 browser.find_element_by_xpath("//*[@id='calendarSubmit']/button").click()
